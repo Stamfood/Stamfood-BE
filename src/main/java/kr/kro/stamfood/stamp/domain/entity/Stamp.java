@@ -2,27 +2,24 @@ package kr.kro.stamfood.stamp.domain.entity;
 
 import kr.kro.stamfood.Global.Domain.BaseEntity;
 import kr.kro.stamfood.restaurant.domain.entity.Restaurant;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@Setter
+@Builder
 @Getter
 @Entity
 public class Stamp extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "stamp_id")
+    @Column(name = "stamp_id", columnDefinition = "BIGINT")
     private Long stampId;
-    @Column(name = "stamp_type")
+    @Column(name = "stamp_type", columnDefinition = "VARCHAR(10)")
     private String stampType;
     @ManyToOne
-    @JoinColumn(name = "restaurant_id")
+    @JoinColumn(name = "restaurant_fk", columnDefinition = "BIGINT")
     private Restaurant restaurant;
 //    @ManyToOne
 //    @JoinColumn(name = "member_id")
