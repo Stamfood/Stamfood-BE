@@ -1,7 +1,7 @@
-package kr.kro.stamfood.restaurant.domain.entity;
+package kr.kro.stamfood.restaurant.domain;
 
 import kr.kro.stamfood.Global.Domain.BaseEntity;
-import kr.kro.stamfood.stamp.domain.entity.Stamp;
+import kr.kro.stamfood.stamp.domain.Stamp;
 import lombok.*;
 
 import javax.persistence.*;
