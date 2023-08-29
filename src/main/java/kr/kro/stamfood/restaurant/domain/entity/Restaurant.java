@@ -32,6 +32,8 @@ public class Restaurant extends BaseEntity {
     private String resBestMenu;
     @Column(name = "res_detail", columnDefinition = "VARCHAR(10)")
     private String resDetail;
+    @Column(name = "res_deleted", columnDefinition = "TINYINT(1) default 0")
+    private int redDeleted;
     @OneToMany(mappedBy = "restaurant")
     private List<Stamp> stamp = new ArrayList<>();
 }
