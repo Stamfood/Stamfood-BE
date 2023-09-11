@@ -67,7 +67,7 @@ public class RestaurantServiceImpl implements RestaurantService {
                     .resMenuImage(restaurant.getResMenuImage())
                     .resType(restaurant.getResType())
                     .resBestMenu(restaurant.getResBestMenu())
-                    .resDetail(restaurant.getResDetail())
+                   .resDetail(restaurant.getResDetail())
                     .build();
         } else {
             // 해당 음식점이 없을 때

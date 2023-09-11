@@ -14,22 +14,22 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class RestaurantController {
     private final RestaurantService restaurantService;
-//    @PostMapping
-//    public ResponseEntity<RegisterRestaurantResponseDto> registerRestaurant(@RequestBody RegisterRestaurantRequestDto requestDto) {
-//        Long registeredRestaurantId = restaurantService.registerRestaurant(requestDto);
-//
-//        return new ResponseEntity<>(HttpStatus.CREATED);
-//    }
+    @PostMapping
+    public ResponseEntity<RegisterRestaurantResponseDto> registerRestaurant(@RequestBody RegisterRestaurantRequestDto requestDto) {
+        Long registeredRestaurantId = restaurantService.registerRestaurant(requestDto);
 
-//    @GetMapping("/{restaurantId}")
-//    public ResponseEntity<?> detailRestaurant(@PathVariable Long restaurantId) {
-////        try {
-//            RestaurantDetailResponseDto responseDto = restaurantService.getRestaurantDetail(restaurantId);
-//            return ResponseEntity.ok(responseDto);
-////        } catch (Exception e) {
-////            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("서버 오류");
-////        }
-//    }
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{restaurantId}")
+    public ResponseEntity<?> detailRestaurant(@PathVariable Long restaurantId) {
+//        try {
+            RestaurantDetailResponseDto responseDto = restaurantService.getRestaurantDetail(restaurantId);
+            return ResponseEntity.ok(responseDto);
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("서버 오류");
+//        }
+    }
 
     @PostMapping("/register")
     public ResponseEntity<Long> registerRestaurant(@RequestBody RegisterTypeRequestDto requestDto) {
