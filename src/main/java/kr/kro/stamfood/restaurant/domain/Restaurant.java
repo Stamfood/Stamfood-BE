@@ -26,14 +26,15 @@ public class Restaurant extends BaseEntity {
     private String resAddress;
     @Column(name = "res_menu_image", columnDefinition = "VARCHAR(20)")
     private String resMenuImage;
-    @Column(name = "res_type", columnDefinition = "VARCHAR(10)")
-    private String resType;
     @Column(name = "res_best_menu", columnDefinition = "VARCHAR(10)")
     private String resBestMenu;
     @Column(name = "res_detail", columnDefinition = "VARCHAR(10)")
     private String resDetail;
     @Column(name = "res_deleted", columnDefinition = "TINYINT(1) default 0")
-    private int redDeleted;
+    private int resDeleted;
+    @ManyToOne
+    @JoinColumn(name = "res_type_id")
+    private RestaurantType resType;
     @OneToMany(mappedBy = "restaurant")
     private List<Stamp> stamp = new ArrayList<>();
 }
