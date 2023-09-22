@@ -1,5 +1,7 @@
 package kr.kro.stamfood.restaurant.presentation.dto.request;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,6 +9,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 public class RegisterRestaurantRequestDto {
     @NotBlank(message = "음식점 이름을 입력해주세요.")

@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class RestaurantType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long resTypeId;
+    private long resTypeId;
     @Column(name = "type_name", columnDefinition = "VARCHAR(10)")
     private String resType;
 }

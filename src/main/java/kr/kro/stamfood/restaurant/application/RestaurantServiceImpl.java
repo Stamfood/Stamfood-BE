@@ -76,6 +76,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
+    @Transactional
     public Long registerType(RegisterTypeRequestDto requestDto) {
 
         RestaurantType restaurantType = RestaurantType.builder()

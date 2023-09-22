@@ -2,7 +2,6 @@ package kr.kro.stamfood.restaurant.intergrationTest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.kro.stamfood.restaurant.domain.Restaurant;
-import kr.kro.stamfood.restaurant.domain.RestaurantType;
 import kr.kro.stamfood.restaurant.persistence.RestaurantJpaRepository;
 import kr.kro.stamfood.restaurant.persistence.RestaurantTypeJpaRepository;
 import kr.kro.stamfood.restaurant.presentation.RestaurantController;
@@ -20,8 +19,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import javax.transaction.Transactional;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -35,8 +32,6 @@ class RestaurantIntegrationTest {
     ObjectMapper objectMapper = new ObjectMapper();
     @Autowired
     private RestaurantService restaurantService;
-    @Autowired
-    private RestaurantTypeJpaRepository restaurantTypeRepository;
     @Autowired
     private RestaurantJpaRepository restaurantRepository;
 
